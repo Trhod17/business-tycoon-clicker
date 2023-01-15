@@ -1,2 +1,2 @@
-# business-tycoon-clicker
+business-tycoon-clicker
 fun little clicker game developed in SvelteKit
