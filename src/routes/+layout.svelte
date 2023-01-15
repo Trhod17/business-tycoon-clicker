@@ -14,7 +14,7 @@
       <slot />
 </div>
 
-<div class="btm-nav w-full bg-neutral text-neutral-content grid grid-cols-3">
+<div class="btm-nav w-full bg-neutral text-neutral-content grid grid-cols-3 border-t-[1px] border-t-white">
   <div class="btn-group btn-group-horizontal w-fit">
     <div class="btn btn-disabled text-white"><FaLinux /></div>
     <a class="btn px-10" href="/">Work</a>

@@ -5,7 +5,7 @@
   import currencyFormatter from "currency-formatter";
 </script>
 
-<div class="stats stats-vertical shadow border-primary-content w-full overflow-hidden">
+<div class="stats stats-vertical shadow border-primary-content w-full overflow-hidden h-[80vh]">
   <div class="stat bg-info text-info-content ">
     <div class="stat-title text-xl font-bold">Cash</div>
     <div class="stat-value text-center">{currencyFormatter.format($player.cash, { code: "USD"})}</div>

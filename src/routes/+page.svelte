@@ -25,14 +25,14 @@
   <meta name="description" content="Svelte demo app" />
 </svelte:head>
 
-<section class="grid grid-cols-3 grid-rows-4 gap-6 mx-2 px-4">
-  <div class="row-span-3 col-span-1 p-0">
+<section class="grid grid-cols-3 grid-rows-4 gap-6 mx-2 px-4 bg-neutral-focus">
+  <div class="row-span-3 col-span-1 p-0 mt-10">
     <Stats> </Stats>
   </div>
   <div class="row-span-3 col-span-2">
     <button
       on:click={() => increment()}
-      class="btn btn-accent w-full h-full text-4xl">Click</button
+      class="btn btn-accent w-full h-[80vh] text-8xl mt-10">Click</button
     >
   </div>
 </section>
