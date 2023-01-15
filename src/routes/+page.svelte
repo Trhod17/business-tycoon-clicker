@@ -25,7 +25,7 @@
   <meta name="description" content="Svelte demo app" />
 </svelte:head>
 
-<section class="grid grid-cols-3 grid-rows-4 gap-6 mx-2 px-4 pb-[12.5em]">
+<section class="grid grid-cols-3 grid-rows-4 gap-6 mx-2 px-4">
   <div class="row-span-3 col-span-1 p-0">
     <Stats> </Stats>
   </div>
