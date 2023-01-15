@@ -21,12 +21,12 @@
     <div class="stat-desc">
       <div class="relative">
         <p
-          class="text-xl absolute z-10 -top-1 left-[8em] font-bold text-secondary-content"
+          class="text-xl text-center font-bold text-secondary-content z-10"
         >
           {$player.xp} XP / {$player.xpToNextLevel} XP
         </p>
         <progress
-          class="progress progress-primary w-[37.6em] border border-secondary h-[1.4rem] text"
+          class="progress progress-primary w-[100%] border border-secondary h-[1.4rem] text absolute top-0.5"
           value={$player.xp}
           max={$player.xpToNextLevel}
         />

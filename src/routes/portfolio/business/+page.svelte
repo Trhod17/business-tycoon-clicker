@@ -57,7 +57,7 @@
   <meta name="description" content="Svelte demo app" />
 </svelte:head>
 
-<section class="grid grid-cols-3 gap-2 overflow-y-auto mb-4 ">
+<section class="grid grid-cols-3 gap-2 overflow-y-auto mb-[5.76em] ">
   {#if $player.business.length != null}
     {#each $player.business as item}
       <div class="card w-96 bg-base-100 shadow-xl p-0 justify-self-center">
