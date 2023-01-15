@@ -10,7 +10,7 @@
   }
 </script>
 
-<div class="w-full max-h-screen mockup-window bg-base-300 border h-fit w-full px-0">
+<div class="w-full max-h-screen mockup-window bg-base-300 border h-fit px-0">
       <slot />
 </div>
 

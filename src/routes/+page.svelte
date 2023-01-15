@@ -32,7 +32,7 @@
   <div class="row-span-3 col-span-2">
     <button
       on:click={() => increment()}
-      class="btn btn-accent w-full h-full text-1xl">Click</button
+      class="btn btn-accent w-full h-full text-4xl">Click</button
     >
   </div>
 </section>
