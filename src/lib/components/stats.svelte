@@ -7,36 +7,36 @@
 
 <div class="stats stats-vertical shadow border-primary-content w-full overflow-hidden h-[80vh]">
   <div class="stat bg-info text-info-content ">
-    <div class="stat-title text-xl font-bold">Cash</div>
-    <div class="stat-value text-center">{currencyFormatter.format($player.cash, { code: "USD"})}</div>
-    <div class="stat-desc text-lg">
+    <div class="stat-title text-3xl font-bold">Cash</div>
+    <div class="stat-value text-center text-5xl">{currencyFormatter.format($player.cash, { code: "USD"})}</div>
+    <div class="stat-desc text-2xl">
       Amount per click: {currencyFormatter.format($player.cashPerClick, { code: "USD"})}
     </div>
   </div>
   <div
     class="stat bg-info text-info-content border-info-content place-content-center"
   >
-    <div class="stat-title text-xl font-bold">Level</div>
-    <div class="stat-value mx-auto">{$player.level}</div>
+    <div class="stat-title text-3xl font-bold">Level</div>
+    <div class="stat-value mx-auto text-5xl">{$player.level}</div>
     <div class="stat-desc">
       <div class="relative">
         <p
-          class="text-xl text-center font-bold text-secondary-content opacity-100 z-10"
+          class="text-3xl text-center font-bold text-secondary-content opacity-100 z-10"
         >
           {$player.xp} XP / {$player.xpToNextLevel} XP
         </p>
         <progress
-          class="progress progress-primary w-[100%] border border-secondary h-[1.4rem] text absolute top-1 -z-10"
+          class="progress progress-primary w-[100%] border border-secondary h-[1.8rem] text absolute top-1 -z-10"
           value={$player.xp}
           max={$player.xpToNextLevel}
         />
-        <p class="text-center">Until next level.</p>
+        <p class="stat-desc text-2xl">Until next level.</p>
       </div>
     </div>
   </div>
   <div class="stat bg-info text-info-content border-info-content">
-    <div class="stat-title text-xl font-bold">Income</div>
-    <div class="stat-value text-center"> {currencyFormatter.format($player.incomeOvertime, { code: "USD"})}</div>
-    <div class="stat-desc text-lg">Per Month</div>
+    <div class="stat-title text-3xl font-bold">Income</div>
+    <div class="stat-value text-center text-5xl"> {currencyFormatter.format($player.incomeOvertime, { code: "USD"})}</div>
+    <div class="stat-desc text-2xl">Per Month</div>
   </div>
 </div>

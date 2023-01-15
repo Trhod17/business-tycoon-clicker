@@ -60,7 +60,7 @@
 <section class="grid grid-cols-3 gap-5 auto-rows-min pt-10 overflow-y-auto bg-neutral-focus h-[90vh]">
   {#if $player.business.length != null}
     {#each $player.business as item}
-      <div class="card w-[95%] bg-base-100 shadow-xl p-0 justify-self-center border border-primary">
+      <div class="card w-[95%] bg-base-100 shadow-xl p-0 justify-self-center border border-accent">
         <div class="card-body">
           <h2 class="card-title">{item[0]}</h2>
           <p>Price: {currencyFormatter.format(item[1], { code: "USD" })}</p>
@@ -71,7 +71,7 @@
           </p>
           <div class="card-actions justify-end">
             <button
-              class="btn btn-primary"
+              class="btn btn-accent"
               disabled={isDisabled(item[1])}
               on:click={() => buyBusiness(item)}>Buy Now</button
             >

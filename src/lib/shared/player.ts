@@ -11,7 +11,7 @@ interface Owned_Business {
 };
 
 
-export const player = writable('player', {
+export const player = writable('player_1.0', {
   cash: 0,
   level: 1,
   xp: 0,
