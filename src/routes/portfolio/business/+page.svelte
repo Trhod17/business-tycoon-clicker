@@ -1,7 +1,7 @@
 <script lang="ts">
   import { player } from "../../../lib/shared/player";
+  import { _ } from 'svelte-i18n'
   // @ts-ignore
-  import currencyFormatter from "currency-formatter";
 
   function isDisabled(price: any) {
     if ($player.cash >= price) {
@@ -25,25 +25,25 @@
   }
 
   function buyBusiness(business: any) {
-    if ($player.business_owned != 0 && exists(business)) {
+    if ($player.business_owned.length != 0 && exists(business)) {
       let i = 0;
       for(const element of $player.business_owned) {
         
-        let val = element[0][0] == business[0];
-        console.log(val, i, element[0][0], business[0])
+        let val = element.business.name == business.name;
+        //console.log(val, i, element[0][0], business.name)
         
         if (val == true) {
-          $player.business_owned[i][1] = $player.business_owned[i][1] += 1;
+          $player.business_owned[i].quantity_owned = $player.business_owned[i].quantity_owned += 1;
           break;
         }
         i += i + 1;
       };
     } else {
-      $player.business_owned.push([business, 1]);
+      $player.business_owned.push({business: business, quantity_owned: 1});
     }
-    console.log(business);
-    $player.cash = $player.cash - business[1];
-    $player.incomeOvertime += business[2];
+   //console.log(business);
+    $player.cash = $player.cash - business.costPerBusiness;
+    $player.incomeOvertime += business.incomePerMonth;
   }
 
   // function testBuy(business: any) {
@@ -53,27 +53,24 @@
 </script>
 
 <svelte:head>
-  <title>Business Tycoon Clicker</title>
-  <meta name="description" content="Svelte demo app" />
+  <title>{$_('business.page.title')}</title>
 </svelte:head>
 
-<section class="grid grid-cols-3 gap-5 auto-rows-min pt-10 overflow-y-auto bg-neutral-focus h-[90vh]">
+<section class="page-main">
   {#if $player.business.length != null}
     {#each $player.business as item}
-      <div class="card w-[95%] bg-base-100 shadow-xl p-0 justify-self-center border border-accent">
+      <div class="buy-card">
         <div class="card-body">
-          <h2 class="card-title">{item[0]}</h2>
-          <p>Price: {currencyFormatter.format(item[1], { code: "USD" })}</p>
+          <h2 class="card-title">{$_('business.card_title.' + item.name)}</h2>
+          <p>{$_('business.card.cost')} {new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(item.costPerBusiness)}</p>
           <p>
-            Monthly Profits: {currencyFormatter.format(item[2], {
-              code: "USD",
-            })}
+            {$_('business.card.income')} {new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(item.incomePerMonth)}
           </p>
           <div class="card-actions justify-end">
             <button
               class="btn btn-accent"
-              disabled={isDisabled(item[1])}
-              on:click={() => buyBusiness(item)}>Buy Now</button
+              disabled={isDisabled(item.costPerBusiness)}
+              on:click={() => buyBusiness(item)}>{$_('business.card.btn')}</button
             >
           </div>
         </div>
@@ -83,4 +80,25 @@
 </section>
 
 <style>
+  .page-main {
+    @apply grid;
+    @apply grid-cols-3;
+    @apply gap-5;
+    @apply auto-rows-min;
+    @apply pt-10;
+    @apply overflow-y-auto;
+    @apply bg-neutral-focus;
+    @apply h-[90vh];
+  }
+
+  .buy-card {
+    @apply card;
+    @apply w-[95%];
+    @apply bg-base-100;
+    @apply shadow-xl;
+    @apply p-0;
+    @apply justify-self-center;
+    @apply border;
+    @apply border-accent;
+  }
 </style>

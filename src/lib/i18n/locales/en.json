@@ -1,0 +1,78 @@
+{
+    "page": {
+      "title": {
+        "text": "Business Tycoon Clicker",
+        "loading": "Loading..."
+      },
+      "work": {
+        "title": "Work",
+        "nav": "Work"
+      },
+      "portfolio": {
+        "title": "Portfolio",
+        "nav": "Portfolio"
+      }
+    },
+    "stats": {
+        "cash": {
+            "title": "Cash",
+            "desc": "Amount per click:"
+        },
+        "level": {
+            "title": "Level",
+            "xp": "XP",
+            "desc": "To next level"
+        },
+        "income": {
+            "title": "Income",
+            "desc": "Per Month"
+        }
+    },
+    "work": {
+        "page": {
+            "title": "Business Tycoon Clicker"
+        },
+        "button": {
+            "title": "Click"
+        }
+    },
+    "portfolio": {
+        "page": {
+            "title": "Business Tycoon Clicker"
+        },
+        "nav": {
+            "business": "Business",
+            "realestate": "Real Estate",
+            "stock": "Stock Market",
+            "crypto": "Cryptocurrency"
+        }
+    },
+    "business": {
+        "page": {
+            "title": "Business Tycoon Clicker"
+        },
+        "card_title": {
+            "general_store": "General Store",
+            "small_toy_store": "Small Toy Store",
+            "fruit_shop": "Fruit Shop",
+            "gift_shop": "Gift Shop",
+            "hardware_store": "Hardware Store",
+            "construction_company": "Construction Company",
+            "factory": "Factory",
+            "car_dealership": "Car Dealership",
+            "supermarket": "Supermarket"
+        },
+        "card": {
+            "cost": "Cost per business:",
+            "income": "Income per month:",
+            "btn": "Buy Now"
+        }
+    },
+    "clock": {
+        "time": {
+            "day": "Day",
+            "month": "Month",
+            "year": "Year"
+        }
+    }
+  }

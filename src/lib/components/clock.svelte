@@ -1,9 +1,12 @@
-<script lang="ts"> 
+<script lang="ts">
+ 
 import "../../routes/styles.css";
-
 import { player } from "../shared/player";
-
 import VirtualClock from 'virtual-clock';
+import { _ } from 'svelte-i18n'
+
+//export let running: boolean;
+
 // Create a new clock
 let clock = new VirtualClock;
  
@@ -13,16 +16,21 @@ console.log('Initial clock time: ' + clock.time);
 // The `time` property may be queried at any time, for example in a render loop
  
 // Start the clock by calling .start()
-clock.start();
+setTimeout(() => {
+    clock.start();
+    }, 500);
+
+
+//console.log(running);
  
 // Or toggling the `running` property
-//clock.running = true;
+//clock.running = running;
 
 clock.minimum = 0;
 clock.maximum = 10 * 1000;
  
 // Speed up the the flow of time
-clock.rate = 15.0;
+clock.rate = 12.0;
 clock.loop = true;
  
 // Or wind back the clock
@@ -53,4 +61,4 @@ clock.alwaysAt(5 * 1000, () => {
 </script>
 
 
-<p id="clock">Day {$player.day} : Month {$player.month} : Year {$player.year}</p> 
+<p id="clock">{$_('clock.time.day')} {$player.day} : {$_('clock.time.month')} {$player.month} : {$_('clock.time.year')} {$player.year}</p> 

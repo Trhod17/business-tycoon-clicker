@@ -1,35 +1,27 @@
 import { writable } from 'svelte-local-storage-store'
+import { player_version } from '../../constants';
+
 interface Business {
   name: string;
-  base_cost: number;
-  base_income: number;
-};
+  costPerBusiness: number;
+  incomePerMonth: number;
+}
 
-interface Owned_Business {
+interface OwnedBusiness {
   business: Business;
-  amount_owned: number;
-};
+  quantity_owned: number;
+}
 
 
-export const player = writable('player_1.0', {
+export const player = writable('player_v' + player_version, {
   cash: 0,
   level: 1,
   xp: 0,
   cashPerClick: 1,
   xpToNextLevel: 10,
   incomeOvertime: 0,
-  business: [
-    ["General Store", 1500, 150],
-    ["Small Toy Store", 3500, 300],
-    ["Fruit Shop", 4500, 400],
-    ["Gift Shop", 5300, 570],
-    ["Hardware Store", 11000, 900],
-    ["Construction Company", 23000, 2400],
-    ["Factory", 54000, 8000],
-    ["Car Dealership", 89000, 15000],
-    ["Supermarket", 100000, 25000],
-  ],
-  business_owned: <any>[],
+  business: [] as Business[],
+  business_owned: [] as OwnedBusiness[],
   day: 1,
   month: 1,
   year: 1

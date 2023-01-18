@@ -1,19 +1,53 @@
 <script lang="ts">
+    import { _ } from 'svelte-i18n'
   </script>
   
   <svelte:head>
-    <title>Business Tycoon Clicker</title>
+    <title>{$_('portfolio.page.title')}</title>
     <!-- <meta name="description" content="Svelte demo app" /> -->
   </svelte:head>
   
   
-  <section class="grid grid-cols-2 grid-rows-4 gap-3 w-full px-7 overflow-hidden bg-neutral-focus h-[90vh] pt-20">
-      <a class="btn btn-accent w-full h-32 text-4xl text-accent-content h-[90%]" href="portfolio/business">Business</a>
-      <a class="btn btn-accent w-full h-32 text-4xl text-accent-content btn-disabled bg-slate-700 text-gray-500 h-[90%]" href="/portfolio">Real Estate</a>
-      <a class="btn btn-accent w-full h-32 text-4xl text-accent-content btn-disabled bg-slate-700 text-gray-500 h-[90%]" href="/portfolio">Stock Market</a>
-      <a class="btn btn-accent w-full h-32 text-4xl text-accent-content btn-disabled bg-slate-700 text-gray-500 h-[90%]" href="/portfolio">Cryptocurrency</a>
+  <section class="page-section-main">
+      <a class="button-active" href="portfolio/business">{$_('portfolio.nav.business')}</a>
+      <a class="button-disabled" href="/portfolio">{$_('portfolio.nav.realestate')}</a>
+      <a class="button-disabled" href="/portfolio">{$_('portfolio.nav.stock')}</a>
+      <a class="button-disabled" href="/portfolio">{$_('portfolio.nav.crypto')}</a>
   </section>
   
   <style>
+    
+    .page-section-main {
+      @apply grid;
+      @apply grid-cols-2;
+      @apply grid-rows-4; 
+      @apply gap-3;
+      @apply w-full;
+      @apply px-7;
+      @apply overflow-hidden;
+      @apply bg-neutral-focus;
+      @apply h-[90vh];
+      @apply pt-20;
+    }
+
+    .button-active {
+      @apply btn;
+      @apply btn-accent;
+      @apply w-full;
+      @apply text-4xl;
+      @apply text-accent-content;
+      @apply h-[90%];
+    }
+
+    .button-disabled {
+      @apply btn;
+      @apply btn-accent;
+      @apply w-full;
+      @apply text-4xl;
+      @apply btn-disabled;
+      @apply bg-slate-700;
+      @apply text-gray-500;
+      @apply h-[90%];
+    }
   </style>
   

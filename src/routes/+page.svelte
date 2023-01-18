@@ -2,7 +2,7 @@
   import "./styles.css";
   import Stats from "../lib/components/stats.svelte";
   import { player } from "../lib/shared/player";
-  import { get } from "svelte/store";
+  import { _ } from 'svelte-i18n'
 
   function increment() {
     $player.cash += $player.cashPerClick;
@@ -21,21 +21,53 @@
 </script>
 
 <svelte:head>
-  <title>Business Tycoon Clicker</title>
+  <title>{$_('work.page.title')}</title>
   <meta name="description" content="Svelte demo app" />
 </svelte:head>
 
-<section class="grid grid-cols-3 grid-rows-4 gap-6 mx-2 px-4 bg-neutral-focus">
-  <div class="row-span-3 col-span-1 p-0 mt-10">
+<section class="page-main">
+  <div class="page-section-one">
     <Stats> </Stats>
   </div>
-  <div class="row-span-3 col-span-2">
+  <div class="page-section-two">
     <button
       on:click={() => increment()}
-      class="btn btn-accent w-full h-[80vh] text-8xl mt-10">Click</button
+      class="money-button">{$_('work.button.title')}</button
     >
   </div>
 </section>
 
 <style>
+  .page-main {
+    @apply grid;
+    @apply grid-cols-3;
+    @apply grid-rows-3;
+    @apply gap-6;
+    @apply mx-2;
+    @apply px-4;
+    @apply bg-neutral-focus;
+  }
+
+  .page-section-one {
+    @apply row-span-3;
+    @apply col-span-1;
+    @apply p-0;
+    @apply mt-8;
+  }
+
+  .page-section-two {
+    @apply row-span-3;
+    @apply col-span-2;
+    @apply grid;
+    @apply place-items-center;
+    @apply mt-9;
+  }
+
+  .money-button {
+    @apply btn;
+    @apply btn-accent; 
+    @apply w-[95%];
+    @apply h-[76vh];
+    @apply text-8xl;
+  }
 </style>
